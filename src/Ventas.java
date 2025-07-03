@@ -12,6 +12,7 @@ public class Ventas extends JFrame{
     private JLabel subtotallb;
     private JLabel totallb;
     private JLabel invalb;
+    private JButton menuButton;
 
 
     public Ventas(String codigo, String nombre, String detalle, String precioU, String stock){
@@ -60,6 +61,13 @@ public class Ventas extends JFrame{
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(null, "Cantidad no valida");
                 }
+            }
+        });
+        menuButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new Menu();
+                dispose();
             }
         });
     }
