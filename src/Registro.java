@@ -22,6 +22,8 @@ public class Registro extends JFrame {
         setContentPane(Principal);
         setSize(500,500);
 
+
+
         guardarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -31,14 +33,26 @@ public class Registro extends JFrame {
                 String precio = punitariotextField4.getText();
                 String stock = stocktextField5.getText();
 
+
                 if (codigo.isEmpty() || nombre.isEmpty() || detalle.isEmpty() || precio.isEmpty() || stock.isEmpty()){
                     JOptionPane.showMessageDialog(null, "Todos los campos deben ser llenados");
                     return;
                 }
 
-                if (){
-
+                try {
+                    double precioU = Double.parseDouble(precio);
+                    int stockC = Integer.parseInt(stock);
+                    if (precioU<0 && stockC<0){
+                        JOptionPane.showMessageDialog(null, "El precio no puede ser negativo");
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null, "Productos guardados con exito");
+                        new Ventas(codigotextField1.getText(), nombretextField2.getText(), detalletextField3.getText(), punitariotextField4.getText(), stocktextField5.getText()).setVisible(false);
+                    }
+                }catch (NumberFormatException ex){
+                    JOptionPane.showMessageDialog(null, "Precio no valido");
                 }
+
             }
         });
 

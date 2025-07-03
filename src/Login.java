@@ -15,7 +15,7 @@ public class Login extends JFrame{
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setContentPane(Principal);
-        setSize(500,500);
+        setSize(300,300);
 
 
         accederButton.addActionListener(new ActionListener() {
@@ -31,6 +31,8 @@ public class Login extends JFrame{
 
                 if (usuario.equals("Ayol") && contrasenia.equals("Esfot123")){
                     JOptionPane.showMessageDialog(null, "Acceso concedido ");
+                    new Menu();
+                    dispose();
                 }else {
                     JOptionPane.showMessageDialog(null, "Acceso denegado");
                 }
