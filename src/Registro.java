@@ -22,7 +22,7 @@ public class Registro extends JFrame {
         setContentPane(Principal);
         setSize(500,500);
 
-
+//
 
         guardarButton.addActionListener(new ActionListener() {
             @Override
